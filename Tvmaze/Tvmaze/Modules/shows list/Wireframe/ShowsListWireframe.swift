@@ -17,13 +17,14 @@ final class ShowsListWireframe: ShowsListWireframeProtocol {
         let wireframe = ShowsListWireframe()
         let presenter = ShowsListPresenter()
         let interactor = ShowsListInteractor()
-        let repository = ShowsListRepository()
         
         wireframe.view = viewController
+        viewController.presenter = presenter
         presenter.view = viewController
         presenter.interactor = interactor
+        presenter.wireframe = wireframe
         interactor.presenter = presenter
-        interactor.repository = repository
+        interactor.repository = ShowsListRepository()
         
         return navigation
     }

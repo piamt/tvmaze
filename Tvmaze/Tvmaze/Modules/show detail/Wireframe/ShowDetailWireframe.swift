@@ -17,13 +17,14 @@ final class ShowDetailWireframe: ShowDetailWireframeProtocol {
         let wireframe = ShowDetailWireframe()
         let presenter = ShowDetailPresenter()
         let interactor = ShowDetailInteractor()
-        let repository = ShowDetailRepository()
         
         wireframe.view = viewController
+        viewController.presenter = presenter
         presenter.view = viewController
         presenter.interactor = interactor
+        presenter.wireframe = wireframe
         interactor.presenter = presenter
-        interactor.repository = repository
+        interactor.repository = ShowDetailRepository()
         
         return viewController
     }

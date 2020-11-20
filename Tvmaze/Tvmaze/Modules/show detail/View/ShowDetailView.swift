@@ -1,5 +1,5 @@
 //
-//  ShowsListView.swift
+//  ShowDetailView.swift
 //  Tvmaze
 //
 //  Created by Pia on 20/11/2020.
@@ -12,6 +12,7 @@ class ShowDetailView: UIViewController, ShowDetailViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.perform(.load)
     }
     
     func populate(_ state: ShowDetailState) {

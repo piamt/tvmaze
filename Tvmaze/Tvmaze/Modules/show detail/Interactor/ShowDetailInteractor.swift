@@ -17,6 +17,4 @@ class ShowDetailInteractor: ShowDetailInteractorInputProtocol {
             repository?.showDetail()
         }
     }
-    
-    
 }
