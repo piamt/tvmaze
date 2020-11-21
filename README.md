@@ -2,7 +2,7 @@
 
 ## Abstract
 Develop a small iOS application composed of two screens: list and detail.
-The app uses Maze REST API: http://www.tvmaze.com/api to fetch data.
+The app uses [Maze REST API] (http://www.tvmaze.com/api) to fetch data.
 
 ## Considerations
 To Run the project, first run *pod instal* in terminal.
