@@ -9,6 +9,7 @@ import Foundation
 
 enum ShowsListViewAction {
     case load
+    case reload
 }
 
 protocol ShowsListPresenterProtocol {

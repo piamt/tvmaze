@@ -8,7 +8,7 @@
 import Foundation
 
 enum ShowsListState {
-    case load
+    case reload([ShowViewModel])
     case error(String)
 }
 

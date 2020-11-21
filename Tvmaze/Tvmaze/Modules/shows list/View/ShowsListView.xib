@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowsListView" customModule="Tvmaze" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="16Y-Qt-p4t" id="zsd-Bl-wUC"/>
                 <outlet property="view" destination="iN0-l3-epB" id="5j5-6b-1Tz"/>
             </connections>
         </placeholder>
@@ -17,8 +18,20 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="16Y-Qt-p4t">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="16Y-Qt-p4t" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="B0x-J3-noX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="16Y-Qt-p4t" secondAttribute="trailing" id="KZa-xu-Efl"/>
+                <constraint firstItem="16Y-Qt-p4t" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="xce-IO-gWK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="16Y-Qt-p4t" secondAttribute="bottom" id="z3Z-cX-irG"/>
+            </constraints>
             <point key="canvasLocation" x="-145" y="100"/>
         </view>
     </objects>

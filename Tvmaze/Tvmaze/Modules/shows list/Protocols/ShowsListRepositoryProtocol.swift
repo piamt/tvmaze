@@ -7,6 +7,8 @@
 
 import Foundation
 
-protocol ShowsListRepositoryProtocol {
-    func tvShows()
+typealias ShowsListResultBlock = (Result<[ShowEntity], ErrorModel>) -> Void
+
+protocol ShowsListRepositoryProtocol: class {
+    func tvShows(page: Int, resultBlock: @escaping ShowsListResultBlock)
 }

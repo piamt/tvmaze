@@ -6,4 +6,12 @@
   
 */
 
+//Shows list screen
 "ShowsList.Title" = "TV Shows List";
+
+// Reusables
+"Alert.Button.Refresh" = "Refresh";
+
+//API Error
+"APIError.UnknownException" = "An unknown error occurred. Try again.";
+"APIError.Parsing" = "Invalid model";

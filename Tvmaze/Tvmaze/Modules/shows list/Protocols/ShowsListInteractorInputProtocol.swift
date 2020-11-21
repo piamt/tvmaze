@@ -14,5 +14,6 @@ enum ShowsListJob {
 protocol ShowsListInteractorInputProtocol {
     var presenter: ShowsListInteractorOutputProtocol? { get set }
     var repository: ShowsListRepositoryProtocol? { get set }
+    var currentPage: Int { get set }
     func `do`(_ job: ShowsListJob)
 }

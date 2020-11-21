@@ -24,7 +24,7 @@ final class ShowsListWireframe: ShowsListWireframeProtocol {
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         interactor.presenter = presenter
-        interactor.repository = ShowsListRepository()
+        interactor.repository = ShowsListRepository(apiDataManager: ShowsListAPIDataManager(), localDataManager: ShowsListLocalDataManager())
         
         return navigation
     }

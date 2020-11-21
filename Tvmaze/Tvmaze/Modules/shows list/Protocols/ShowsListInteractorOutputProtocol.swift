@@ -8,8 +8,8 @@
 import Foundation
 
 enum ShowsListIteractorResult {
-    case tvShowsSucceed
-    case tvShowsFailed(Error)
+    case tvShowsSucceed([ShowViewModel])
+    case tvShowsFailed(ErrorModel)
 }
 
 protocol ShowsListInteractorOutputProtocol: class {

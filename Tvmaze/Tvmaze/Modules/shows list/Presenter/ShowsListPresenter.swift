@@ -18,16 +18,19 @@ class ShowsListPresenter: ShowsListPresenterProtocol, ShowsListInteractorOutputP
         switch action {
         case .load:
             interactor?.do(.requestTvShows)
+        case .reload:
+            interactor?.currentPage = 0
+            interactor?.do(.requestTvShows)
         }
     }
     
     // MARK: Implement ShowsListInteractorOutputProtocol
     func handle(_ result: ShowsListIteractorResult) {
         switch result {
-        case .tvShowsSucceed:
-            view?.populate(.load)
+        case .tvShowsSucceed(let arrayViewModel):
+            view?.populate(.reload(arrayViewModel))
         case .tvShowsFailed(let error):
-            view?.populate(.error(error.localizedDescription))
+            view?.populate(.error(error.value.string.localized))
         }
     }
 }
