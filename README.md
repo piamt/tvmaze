@@ -1,11 +1,20 @@
 # tvmaze
+
+##Purpose
 Develop a small iOS application composed of two screens: list and detail.
+The app uses Maze REST API: http://www.tvmaze.com/api to fetch data.
 
-To Run the project, first run ´pod instal´ in terminal.
+##Considerations
+To Run the project, first run *pod instal* in terminal.
 
-UI for iPhone for simplification
-VIPER architecture
-Simple NSURLSession + Decodable
-Pagination: As I don't know the number of elements in advance, I go with a simple pagination: If I am almost at the bottom (i.e.: 20 elements to arrive to the bottom), I fetch next page.
-UITableViewCell: Just used the default cell for simplification. I would create a custom cell with a method to populate it, moving SDWebImage to that view.
+##Implementation details
+1. For simplification, the UI was implemented only for iPhone devices
+2. The architecture used for the 2 modules was VIPER
+3. For networking, taking into account the scope of the project, a simple implementation with NSURLSession + Decodable was enough
+4. Regarding pagination: we have a simplified version of an infinite scroll, with the handicap that we do not have the total number of elements in advance.
+
+##Libraries
+I used cocoapods for libraries. Just 1 library was added to the main project and 1 for testing purposes.
+1. SDWebImage to upload images
+2. iOSSnapshotTestCase for screenshot tests
 
