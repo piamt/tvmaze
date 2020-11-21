@@ -1,6 +1,8 @@
 # tvmaze
 Develop a small iOS application composed of two screens: list and detail.
 
+To Run the project, first run ´pod instal´ in terminal.
+
 UI for iPhone for simplification
 VIPER architecture
 Simple NSURLSession + Decodable

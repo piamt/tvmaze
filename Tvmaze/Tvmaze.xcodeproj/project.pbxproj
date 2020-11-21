@@ -20,6 +20,12 @@
 		0E0F3C452568963700BD677D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F3C442568963700BD677D /* UIViewController+Extension.swift */; };
 		0E43F9E125696440002DCCAB /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43F9DF25696440002DCCAB /* ShowTableViewCell.swift */; };
 		0E43F9E225696440002DCCAB /* ShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E43F9E025696440002DCCAB /* ShowTableViewCell.xib */; };
+		0E43FA55256979A7002DCCAB /* ShowEntity.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E43FA49256979A7002DCCAB /* ShowEntity.json */; };
+		0E43FA56256979A7002DCCAB /* ShowsListRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FA4D256979A7002DCCAB /* ShowsListRepositoryTests.swift */; };
+		0E43FA57256979A7002DCCAB /* ShowsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FA4F256979A7002DCCAB /* ShowsListPresenterTests.swift */; };
+		0E43FA58256979A7002DCCAB /* ShowsListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FA51256979A7002DCCAB /* ShowsListViewTests.swift */; };
+		0E43FA59256979A7002DCCAB /* ShowsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FA53256979A7002DCCAB /* ShowsListInteractorTests.swift */; };
+		0E43FA6B25697AD7002DCCAB /* JSONUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FA6A25697AD7002DCCAB /* JSONUtils.swift */; };
 		0E4EF5E02568155E0005503C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E4EF5E22568155E0005503C /* Localizable.strings */; };
 		0E4EF5E9256815C90005503C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4EF5E8256815C90005503C /* String+Extension.swift */; };
 		0EB863342568119B00107594 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB863332568119B00107594 /* AppDelegate.swift */; };
@@ -89,6 +95,12 @@
 		0E0F3C442568963700BD677D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		0E43F9DF25696440002DCCAB /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
 		0E43F9E025696440002DCCAB /* ShowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowTableViewCell.xib; sourceTree = "<group>"; };
+		0E43FA49256979A7002DCCAB /* ShowEntity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShowEntity.json; sourceTree = "<group>"; };
+		0E43FA4D256979A7002DCCAB /* ShowsListRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsListRepositoryTests.swift; sourceTree = "<group>"; };
+		0E43FA4F256979A7002DCCAB /* ShowsListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsListPresenterTests.swift; sourceTree = "<group>"; };
+		0E43FA51256979A7002DCCAB /* ShowsListViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsListViewTests.swift; sourceTree = "<group>"; };
+		0E43FA53256979A7002DCCAB /* ShowsListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsListInteractorTests.swift; sourceTree = "<group>"; };
+		0E43FA6A25697AD7002DCCAB /* JSONUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtils.swift; sourceTree = "<group>"; };
 		0E4EF5E12568155E0005503C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E4EF5E8256815C90005503C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		0EB863302568119B00107594 /* Tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,19 +205,96 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		0E43FA48256979A7002DCCAB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FA49256979A7002DCCAB /* ShowEntity.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0E43FA4A256979A7002DCCAB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FA4B256979A7002DCCAB /* shows list */,
+				0E43FA54256979A7002DCCAB /* show detail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0E43FA4B256979A7002DCCAB /* shows list */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FA4C256979A7002DCCAB /* Repository */,
+				0E43FA4E256979A7002DCCAB /* Presenter */,
+				0E43FA50256979A7002DCCAB /* View */,
+				0E43FA52256979A7002DCCAB /* Interactor */,
+			);
+			path = "shows list";
+			sourceTree = "<group>";
+		};
+		0E43FA4C256979A7002DCCAB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FA4D256979A7002DCCAB /* ShowsListRepositoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		0E43FA4E256979A7002DCCAB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FA4F256979A7002DCCAB /* ShowsListPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0E43FA50256979A7002DCCAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FA51256979A7002DCCAB /* ShowsListViewTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E43FA52256979A7002DCCAB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FA53256979A7002DCCAB /* ShowsListInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0E43FA54256979A7002DCCAB /* show detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "show detail";
+			sourceTree = "<group>";
+		};
+		0E43FA6825697AC7002DCCAB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FA48256979A7002DCCAB /* Resources */,
+				0E43FA6925697ACC002DCCAB /* Utils */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0E43FA6925697ACC002DCCAB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FA6A25697AD7002DCCAB /* JSONUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0E4EF5D9256815370005503C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				0E4EF5E22568155E0005503C /* Localizable.strings */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		0E4EF5DA2568153E0005503C /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		0E4EF5E6256815B50005503C /* Extensions */ = {
@@ -265,6 +354,8 @@
 		0EB863492568119F00107594 /* TvmazeTests */ = {
 			isa = PBXGroup;
 			children = (
+				0E43FA6825697AC7002DCCAB /* Common */,
+				0E43FA4A256979A7002DCCAB /* Modules */,
 				0EB8634A2568119F00107594 /* TvmazeTests.swift */,
 				0EB8634C2568119F00107594 /* Info.plist */,
 			);
@@ -424,7 +515,6 @@
 			children = (
 				0E4EF5E6256815B50005503C /* Extensions */,
 				0E4EF5D9256815370005503C /* Resources */,
-				0E4EF5DA2568153E0005503C /* Utils */,
 				0EDECF8F2568266E001A0F0B /* API Service */,
 			);
 			path = Common;
@@ -504,6 +594,7 @@
 				0EB863422568119F00107594 /* Sources */,
 				0EB863432568119F00107594 /* Frameworks */,
 				0EB863442568119F00107594 /* Resources */,
+				F62CD66E44ECA3A99D38734F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -595,6 +686,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E43FA55256979A7002DCCAB /* ShowEntity.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +783,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F62CD66E44ECA3A99D38734F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TvmazeTests/Pods-TvmazeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TvmazeTests/Pods-TvmazeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TvmazeTests/Pods-TvmazeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FA1176E7452929F5067E3CDE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -760,6 +869,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E43FA56256979A7002DCCAB /* ShowsListRepositoryTests.swift in Sources */,
+				0E43FA6B25697AD7002DCCAB /* JSONUtils.swift in Sources */,
+				0E43FA58256979A7002DCCAB /* ShowsListViewTests.swift in Sources */,
+				0E43FA57256979A7002DCCAB /* ShowsListPresenterTests.swift in Sources */,
+				0E43FA59256979A7002DCCAB /* ShowsListInteractorTests.swift in Sources */,
 				0EB8634B2568119F00107594 /* TvmazeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
