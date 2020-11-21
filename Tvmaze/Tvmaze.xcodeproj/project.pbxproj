@@ -53,6 +53,9 @@
 		0EDECF8A25682642001A0F0B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF8925682642001A0F0B /* APIService.swift */; };
 		0EDECF9225682753001A0F0B /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF9125682753001A0F0B /* APIConstants.swift */; };
 		0EDECF97256827A2001A0F0B /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF96256827A2001A0F0B /* EndpointProtocol.swift */; };
+		6ACBA58D213A06E7EB7514C1 /* Pods_Tvmaze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305C81BAD9F0DB00CDB4EA0A /* Pods_Tvmaze.framework */; };
+		81E4B51182D4FF66115EEBC2 /* Pods_TvmazeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E05E76538055C834DD7B7A /* Pods_TvmazeTests.framework */; };
+		B6BECF1D5FB5FEB642AEFC5C /* Pods_Tvmaze_TvmazeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7123322E4FD025792D4ED907 /* Pods_Tvmaze_TvmazeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,15 @@
 		0EDECF8925682642001A0F0B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		0EDECF9125682753001A0F0B /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		0EDECF96256827A2001A0F0B /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
+		305C81BAD9F0DB00CDB4EA0A /* Pods_Tvmaze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tvmaze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3713F6A830DA9D58AFA8EDAF /* Pods-Tvmaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tvmaze.release.xcconfig"; path = "Target Support Files/Pods-Tvmaze/Pods-Tvmaze.release.xcconfig"; sourceTree = "<group>"; };
+		534067132560A90D67BCDBD0 /* Pods-TvmazeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvmazeTests.debug.xcconfig"; path = "Target Support Files/Pods-TvmazeTests/Pods-TvmazeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		702C81B8688C80611C313656 /* Pods-Tvmaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tvmaze.debug.xcconfig"; path = "Target Support Files/Pods-Tvmaze/Pods-Tvmaze.debug.xcconfig"; sourceTree = "<group>"; };
+		7123322E4FD025792D4ED907 /* Pods_Tvmaze_TvmazeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tvmaze_TvmazeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72E05E76538055C834DD7B7A /* Pods_TvmazeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TvmazeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A237C0CB05B6F1F31D0E61B /* Pods-Tvmaze-TvmazeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tvmaze-TvmazeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tvmaze-TvmazeUITests/Pods-Tvmaze-TvmazeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		98D6ADFD8261F31EFCFE9F41 /* Pods-TvmazeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvmazeTests.release.xcconfig"; path = "Target Support Files/Pods-TvmazeTests/Pods-TvmazeTests.release.xcconfig"; sourceTree = "<group>"; };
+		C9097B054A36367545358BFF /* Pods-Tvmaze-TvmazeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tvmaze-TvmazeUITests.release.xcconfig"; path = "Target Support Files/Pods-Tvmaze-TvmazeUITests/Pods-Tvmaze-TvmazeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACBA58D213A06E7EB7514C1 /* Pods_Tvmaze.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E4B51182D4FF66115EEBC2 /* Pods_TvmazeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BECF1D5FB5FEB642AEFC5C /* Pods_Tvmaze_TvmazeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +231,8 @@
 				0EB863492568119F00107594 /* TvmazeTests */,
 				0EB863542568119F00107594 /* TvmazeUITests */,
 				0EB863312568119B00107594 /* Products */,
+				8C360036EEEEC0D5F02765D8 /* Pods */,
+				43FB83FC8A3C27F4930A7024 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -450,6 +467,30 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
+		43FB83FC8A3C27F4930A7024 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				305C81BAD9F0DB00CDB4EA0A /* Pods_Tvmaze.framework */,
+				7123322E4FD025792D4ED907 /* Pods_Tvmaze_TvmazeUITests.framework */,
+				72E05E76538055C834DD7B7A /* Pods_TvmazeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C360036EEEEC0D5F02765D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				702C81B8688C80611C313656 /* Pods-Tvmaze.debug.xcconfig */,
+				3713F6A830DA9D58AFA8EDAF /* Pods-Tvmaze.release.xcconfig */,
+				8A237C0CB05B6F1F31D0E61B /* Pods-Tvmaze-TvmazeUITests.debug.xcconfig */,
+				C9097B054A36367545358BFF /* Pods-Tvmaze-TvmazeUITests.release.xcconfig */,
+				534067132560A90D67BCDBD0 /* Pods-TvmazeTests.debug.xcconfig */,
+				98D6ADFD8261F31EFCFE9F41 /* Pods-TvmazeTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -457,9 +498,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EB8635A2568119F00107594 /* Build configuration list for PBXNativeTarget "Tvmaze" */;
 			buildPhases = (
+				7849D618B7D00B072EECF192 /* [CP] Check Pods Manifest.lock */,
 				0EB8632C2568119B00107594 /* Sources */,
 				0EB8632D2568119B00107594 /* Frameworks */,
 				0EB8632E2568119B00107594 /* Resources */,
+				FA1176E7452929F5067E3CDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -474,6 +517,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EB8635D2568119F00107594 /* Build configuration list for PBXNativeTarget "TvmazeTests" */;
 			buildPhases = (
+				F2ACF897CD42675441457148 /* [CP] Check Pods Manifest.lock */,
 				0EB863422568119F00107594 /* Sources */,
 				0EB863432568119F00107594 /* Frameworks */,
 				0EB863442568119F00107594 /* Resources */,
@@ -492,9 +536,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EB863602568119F00107594 /* Build configuration list for PBXNativeTarget "TvmazeUITests" */;
 			buildPhases = (
+				C22160913AC9A0C3437AE9B2 /* [CP] Check Pods Manifest.lock */,
 				0EB8634D2568119F00107594 /* Sources */,
 				0EB8634E2568119F00107594 /* Frameworks */,
 				0EB8634F2568119F00107594 /* Resources */,
+				9F7CC39028414E996BE19097 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -576,6 +622,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7849D618B7D00B072EECF192 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tvmaze-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F7CC39028414E996BE19097 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tvmaze-TvmazeUITests/Pods-Tvmaze-TvmazeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tvmaze-TvmazeUITests/Pods-Tvmaze-TvmazeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tvmaze-TvmazeUITests/Pods-Tvmaze-TvmazeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C22160913AC9A0C3437AE9B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tvmaze-TvmazeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2ACF897CD42675441457148 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TvmazeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA1176E7452929F5067E3CDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tvmaze/Pods-Tvmaze-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tvmaze/Pods-Tvmaze-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tvmaze/Pods-Tvmaze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0EB8632C2568119B00107594 /* Sources */ = {
@@ -793,6 +942,7 @@
 		};
 		0EB8635B2568119F00107594 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 702C81B8688C80611C313656 /* Pods-Tvmaze.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -812,6 +962,7 @@
 		};
 		0EB8635C2568119F00107594 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3713F6A830DA9D58AFA8EDAF /* Pods-Tvmaze.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -831,6 +982,7 @@
 		};
 		0EB8635E2568119F00107594 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 534067132560A90D67BCDBD0 /* Pods-TvmazeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -853,6 +1005,7 @@
 		};
 		0EB8635F2568119F00107594 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98D6ADFD8261F31EFCFE9F41 /* Pods-TvmazeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -875,6 +1028,7 @@
 		};
 		0EB863612568119F00107594 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A237C0CB05B6F1F31D0E61B /* Pods-Tvmaze-TvmazeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -895,6 +1049,7 @@
 		};
 		0EB863622568119F00107594 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9097B054A36367545358BFF /* Pods-Tvmaze-TvmazeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
