@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -184,13 +184,6 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		0E0F3C3625688F0100BD677D /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Subviews;
-			sourceTree = "<group>";
-		};
 		0E4EF5D9256815370005503C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,7 +302,6 @@
 		0EB8636B2568139100107594 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0E0F3C3625688F0100BD677D /* Subviews */,
 				0EB8636F256813BD00107594 /* ShowsListView.swift */,
 				0EB86374256813D800107594 /* ShowsListView.xib */,
 				0E0F3C31256887B200BD677D /* ShowViewModel.swift */,
@@ -487,7 +479,6 @@
 				534067132560A90D67BCDBD0 /* Pods-TvmazeTests.debug.xcconfig */,
 				98D6ADFD8261F31EFCFE9F41 /* Pods-TvmazeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

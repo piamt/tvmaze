@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class ShowsListView: UIViewController, ShowsListViewProtocol {
     
@@ -52,6 +53,21 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.addSubview(refreshControl)
     }
+    
+    private func setupCellUI(_ cell: UITableViewCell, show: ShowViewModel) {
+        cell.textLabel?.text = show.name
+        if let imageUrl = show.imageUrl {
+            cell.imageView?.sd_setImage(with: URL(string: imageUrl),
+                                                placeholderImage: UIImage(named: "placeholder"),
+                                                options: [.retryFailed]) { (_, _, _, _) in
+                cell.imageView?.contentMode = .scaleAspectFill
+                cell.setNeedsLayout()
+            }
+        } else {
+            cell.imageView?.image = UIImage(named: "placeholder")
+            cell.imageView?.contentMode = .scaleAspectFill
+        }
+    }
 }
 
 extension ShowsListView: UITableViewDelegate, UITableViewDataSource {
@@ -62,17 +78,16 @@ extension ShowsListView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let show = shows[indexPath.row]
         
         // TODO: If custom cell uncomment
         //if cell == nil {
         //    cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
         //}
         
-        cell.textLabel?.text = show.name
-        // TODO: Use SDWebImage to display show.image.medium
+        setupCellUI(cell, show: shows[indexPath.row])
         
-        if (indexPath.row == shows.count - 10) { // TODO: Improve pagination
+        // TODO: Improve pagination
+        if (indexPath.row == shows.count - 10) {
             presenter?.perform(.fetchData)
         }
         
