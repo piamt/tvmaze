@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 final class ShowsListView: UIViewController, ShowsListViewProtocol {
     
@@ -24,7 +23,6 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         title = "ShowsList.Title".localized
         tableViewConfiguration()
         presenter?.perform(.reload)

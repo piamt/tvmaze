@@ -24,7 +24,6 @@ final class ShowDetailWireframe: ShowDetailWireframeProtocol {
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         interactor.presenter = presenter
-        interactor.repository = ShowDetailRepository()
         
         return viewController
     }

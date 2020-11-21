@@ -44,13 +44,11 @@
 		0EDECF5C25681DE6001A0F0B /* ShowsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF5B25681DE6001A0F0B /* ShowsListInteractor.swift */; };
 		0EDECF6125681E2E001A0F0B /* ShowsListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF6025681E2E001A0F0B /* ShowsListRepository.swift */; };
 		0EDECF6B2568210D001A0F0B /* ShowDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF652568210D001A0F0B /* ShowDetailPresenterProtocol.swift */; };
-		0EDECF6C2568210D001A0F0B /* ShowDetailRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF662568210D001A0F0B /* ShowDetailRepositoryProtocol.swift */; };
 		0EDECF6D2568210D001A0F0B /* ShowDetailWireframeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF672568210D001A0F0B /* ShowDetailWireframeProtocol.swift */; };
 		0EDECF6E2568210D001A0F0B /* ShowDetailInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF682568210D001A0F0B /* ShowDetailInteractorOutputProtocol.swift */; };
 		0EDECF6F2568210D001A0F0B /* ShowDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF692568210D001A0F0B /* ShowDetailViewProtocol.swift */; };
 		0EDECF702568210D001A0F0B /* ShowDetailnteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF6A2568210D001A0F0B /* ShowDetailnteractorInputProtocol.swift */; };
 		0EDECF7525682116001A0F0B /* ShowDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF7425682116001A0F0B /* ShowDetailInteractor.swift */; };
-		0EDECF7A2568211E001A0F0B /* ShowDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF792568211E001A0F0B /* ShowDetailRepository.swift */; };
 		0EDECF7F25682125001A0F0B /* ShowDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF7E25682125001A0F0B /* ShowDetailPresenter.swift */; };
 		0EDECF8A25682642001A0F0B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF8925682642001A0F0B /* APIService.swift */; };
 		0EDECF9225682753001A0F0B /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECF9125682753001A0F0B /* APIConstants.swift */; };
@@ -121,13 +119,11 @@
 		0EDECF5B25681DE6001A0F0B /* ShowsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListInteractor.swift; sourceTree = "<group>"; };
 		0EDECF6025681E2E001A0F0B /* ShowsListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListRepository.swift; sourceTree = "<group>"; };
 		0EDECF652568210D001A0F0B /* ShowDetailPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailPresenterProtocol.swift; sourceTree = "<group>"; };
-		0EDECF662568210D001A0F0B /* ShowDetailRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailRepositoryProtocol.swift; sourceTree = "<group>"; };
 		0EDECF672568210D001A0F0B /* ShowDetailWireframeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailWireframeProtocol.swift; sourceTree = "<group>"; };
 		0EDECF682568210D001A0F0B /* ShowDetailInteractorOutputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailInteractorOutputProtocol.swift; sourceTree = "<group>"; };
 		0EDECF692568210D001A0F0B /* ShowDetailViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailViewProtocol.swift; sourceTree = "<group>"; };
 		0EDECF6A2568210D001A0F0B /* ShowDetailnteractorInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailnteractorInputProtocol.swift; sourceTree = "<group>"; };
 		0EDECF7425682116001A0F0B /* ShowDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailInteractor.swift; sourceTree = "<group>"; };
-		0EDECF792568211E001A0F0B /* ShowDetailRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailRepository.swift; sourceTree = "<group>"; };
 		0EDECF7E25682125001A0F0B /* ShowDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailPresenter.swift; sourceTree = "<group>"; };
 		0EDECF8925682642001A0F0B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		0EDECF9125682753001A0F0B /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
@@ -303,8 +299,6 @@
 			children = (
 				0EDECF2D256817D0001A0F0B /* Protocols */,
 				0EDECF1C25681787001A0F0B /* Wireframe */,
-				0EDECF1E25681787001A0F0B /* Data Managers */,
-				0EDECF1B25681787001A0F0B /* Repository */,
 				0EDECF1D25681787001A0F0B /* Interactor */,
 				0EDECF1A25681787001A0F0B /* Presenter */,
 				0EDECF1725681787001A0F0B /* View */,
@@ -382,14 +376,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		0EDECF1B25681787001A0F0B /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				0EDECF792568211E001A0F0B /* ShowDetailRepository.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
 		0EDECF1C25681787001A0F0B /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,13 +390,6 @@
 				0EDECF7425682116001A0F0B /* ShowDetailInteractor.swift */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		0EDECF1E25681787001A0F0B /* Data Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Data Managers";
 			sourceTree = "<group>";
 		};
 		0EDECF2C256817C8001A0F0B /* Protocols */ = {
@@ -434,7 +413,6 @@
 				0EDECF682568210D001A0F0B /* ShowDetailInteractorOutputProtocol.swift */,
 				0EDECF6A2568210D001A0F0B /* ShowDetailnteractorInputProtocol.swift */,
 				0EDECF652568210D001A0F0B /* ShowDetailPresenterProtocol.swift */,
-				0EDECF662568210D001A0F0B /* ShowDetailRepositoryProtocol.swift */,
 				0EDECF692568210D001A0F0B /* ShowDetailViewProtocol.swift */,
 				0EDECF672568210D001A0F0B /* ShowDetailWireframeProtocol.swift */,
 			);
@@ -738,7 +716,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EDECF2F25681833001A0F0B /* ShowsListWireframeProtocol.swift in Sources */,
-				0EDECF6C2568210D001A0F0B /* ShowDetailRepositoryProtocol.swift in Sources */,
 				0E0F3C2A256871D400BD677D /* ShowsListLocalDataManagerProtocol.swift in Sources */,
 				0EDECF5725681D7C001A0F0B /* ShowsListRepositoryProtocol.swift in Sources */,
 				0EDECF4325681AFD001A0F0B /* ShowsListPresenterProtocol.swift in Sources */,
@@ -749,7 +726,6 @@
 				0EB863342568119B00107594 /* AppDelegate.swift in Sources */,
 				0EDECF7525682116001A0F0B /* ShowDetailInteractor.swift in Sources */,
 				0EDECF34256818C6001A0F0B /* ShowsListViewProtocol.swift in Sources */,
-				0EDECF7A2568211E001A0F0B /* ShowDetailRepository.swift in Sources */,
 				0E0F3C012568664400BD677D /* APIError.swift in Sources */,
 				0EDECF4D25681B74001A0F0B /* ShowsListPresenter.swift in Sources */,
 				0E0F3C2025686E6C00BD677D /* ShowsListAPIDataManagerProtocol.swift in Sources */,

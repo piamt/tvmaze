@@ -9,7 +9,6 @@ import Foundation
 
 enum ShowDetailState {
     case load(DetailViewModel)
-    case error(String)
 }
 
 protocol ShowDetailViewProtocol: class {

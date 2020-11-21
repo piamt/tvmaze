@@ -13,6 +13,5 @@ enum ShowDetailJob {
 
 protocol ShowDetailInteractorInputProtocol {
     var presenter: ShowDetailInteractorOutputProtocol? { get set }
-    var repository: ShowDetailRepositoryProtocol? { get set }
     func `do`(_ job: ShowDetailJob)
 }

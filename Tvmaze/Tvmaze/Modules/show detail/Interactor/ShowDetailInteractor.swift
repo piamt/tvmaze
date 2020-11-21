@@ -9,7 +9,6 @@ import Foundation
 
 class ShowDetailInteractor: ShowDetailInteractorInputProtocol {
     weak var presenter: ShowDetailInteractorOutputProtocol?
-    var repository: ShowDetailRepositoryProtocol?
     var entity: ShowEntity
     
     init(entity: ShowEntity) {
@@ -20,7 +19,6 @@ class ShowDetailInteractor: ShowDetailInteractorInputProtocol {
         switch job {
         case .requestShowDetail:
             presenter?.handle(.showDetail(DetailViewModel(entity: entity)))
-            // TODO: LocalDataManager: repository?.showDetail()
         }
     }
 }

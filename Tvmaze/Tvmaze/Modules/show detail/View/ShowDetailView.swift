@@ -25,8 +25,6 @@ class ShowDetailView: UIViewController, ShowDetailViewProtocol {
         switch state {
         case .load(let viewModel):
             populateDetail(viewModel)
-        case .error(let error):
-            showError(error)
         }
     }
     
