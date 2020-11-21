@@ -24,10 +24,8 @@ class ShowDetailPresenter: ShowDetailPresenterProtocol, ShowDetailInteractorOutp
     // MARK: Implement ShowDetailInteractorOutputProtocol
     func handle(_ result: ShowDetailIteractorResult) {
         switch result {
-        case .showDetailSucceed:
-            view?.populate(.load)
-        case .showDetailFailed(let error):
-            view?.populate(.error(error.localizedDescription))
+        case .showDetail(let viewModel):
+            view?.populate(.load(viewModel)) // TODO: populate with viewModel
         }
     }
 }

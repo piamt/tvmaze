@@ -38,13 +38,7 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
                 self.refreshControl.endRefreshing()
             }
         case .error(let error):
-            DispatchQueue.main.async {
-                let alert = UIAlertController(title: nil, message: error, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Alert.Button.Refresh".localized, style: UIAlertAction.Style.default, handler: { _ in
-                    self.presenter?.perform(.load)
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
+            showError(error)
         }
     }
     
@@ -55,26 +49,38 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
     private func tableViewConfiguration() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.addSubview(refreshControl)
     }
 }
 
-extension ShowsListView: UITableViewDelegate, UITableViewDataSource {
+extension ShowsListView: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let show = shows[indexPath.row]
         
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
-        }
+        // TODO: If custom cell uncomment
+        //if cell == nil {
+        //    cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
+        //}
+        
         cell.textLabel?.text = show.name
         // TODO: Use SDWebImage to display show.image.medium
         
-        return cell ?? UITableViewCell()
+        return cell // TODO: if custom cell add: ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.perform(.detail(index: indexPath.row))
+    }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        <#code#>
     }
 }

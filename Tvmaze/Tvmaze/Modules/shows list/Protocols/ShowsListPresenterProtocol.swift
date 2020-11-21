@@ -10,6 +10,7 @@ import Foundation
 enum ShowsListViewAction {
     case load
     case reload
+    case detail(index: Int)
 }
 
 protocol ShowsListPresenterProtocol {

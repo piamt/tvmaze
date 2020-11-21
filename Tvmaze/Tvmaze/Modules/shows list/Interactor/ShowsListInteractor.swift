@@ -14,6 +14,10 @@ class ShowsListInteractor: ShowsListInteractorInputProtocol {
     var currentPage: Int = 0
     private var showsArray: [ShowEntity] = []
     
+    func showEntityForIndex(_ index: Int) -> ShowEntity {
+        showsArray[index]
+    }
+    
     func `do`(_ job: ShowsListJob) {
         switch job {
         case .requestTvShows:

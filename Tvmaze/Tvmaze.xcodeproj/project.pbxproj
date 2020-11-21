@@ -16,6 +16,8 @@
 		0E0F3C252568713100BD677D /* ShowsListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F3C242568713100BD677D /* ShowsListLocalDataManager.swift */; };
 		0E0F3C2A256871D400BD677D /* ShowsListLocalDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F3C29256871D400BD677D /* ShowsListLocalDataManagerProtocol.swift */; };
 		0E0F3C32256887B200BD677D /* ShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F3C31256887B200BD677D /* ShowViewModel.swift */; };
+		0E0F3C40256893F000BD677D /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F3C3F256893F000BD677D /* DetailViewModel.swift */; };
+		0E0F3C452568963700BD677D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F3C442568963700BD677D /* UIViewController+Extension.swift */; };
 		0E4EF5E02568155E0005503C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E4EF5E22568155E0005503C /* Localizable.strings */; };
 		0E4EF5E9256815C90005503C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4EF5E8256815C90005503C /* String+Extension.swift */; };
 		0EB863342568119B00107594 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB863332568119B00107594 /* AppDelegate.swift */; };
@@ -80,6 +82,8 @@
 		0E0F3C242568713100BD677D /* ShowsListLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListLocalDataManager.swift; sourceTree = "<group>"; };
 		0E0F3C29256871D400BD677D /* ShowsListLocalDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListLocalDataManagerProtocol.swift; sourceTree = "<group>"; };
 		0E0F3C31256887B200BD677D /* ShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewModel.swift; sourceTree = "<group>"; };
+		0E0F3C3F256893F000BD677D /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		0E0F3C442568963700BD677D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		0E4EF5E12568155E0005503C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E4EF5E8256815C90005503C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		0EB863302568119B00107594 /* Tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				0E4EF5E8256815C90005503C /* String+Extension.swift */,
+				0E0F3C442568963700BD677D /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,8 +203,8 @@
 		0E4EF5E7256815BA0005503C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				0EB8636A2568136000107594 /* show detail */,
 				0EB863692568134D00107594 /* shows list */,
+				0EB8636A2568136000107594 /* show detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -229,9 +234,6 @@
 			children = (
 				0EDECF8E25682668001A0F0B /* Common */,
 				0E4EF5E7256815BA0005503C /* Modules */,
-				0E4EF5E6256815B50005503C /* Extensions */,
-				0E4EF5DA2568153E0005503C /* Utils */,
-				0E4EF5D9256815370005503C /* Resources */,
 				0EB863332568119B00107594 /* AppDelegate.swift */,
 				0EB863352568119B00107594 /* SceneDelegate.swift */,
 				0EB8633C2568119E00107594 /* Assets.xcassets */,
@@ -344,6 +346,7 @@
 			children = (
 				0EDECF1825681787001A0F0B /* ShowDetailView.xib */,
 				0EDECF1925681787001A0F0B /* ShowDetailView.swift */,
+				0E0F3C3F256893F000BD677D /* DetailViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,6 +421,9 @@
 		0EDECF8E25682668001A0F0B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0E4EF5E6256815B50005503C /* Extensions */,
+				0E4EF5D9256815370005503C /* Resources */,
+				0E4EF5DA2568153E0005503C /* Utils */,
 				0EDECF8F2568266E001A0F0B /* API Service */,
 			);
 			path = Common;
@@ -583,6 +589,7 @@
 				0EDECF4325681AFD001A0F0B /* ShowsListPresenterProtocol.swift in Sources */,
 				0EDECF6125681E2E001A0F0B /* ShowsListRepository.swift in Sources */,
 				0E4EF5E9256815C90005503C /* String+Extension.swift in Sources */,
+				0E0F3C40256893F000BD677D /* DetailViewModel.swift in Sources */,
 				0E0F3C07256867A100BD677D /* ErrorModel.swift in Sources */,
 				0EB863342568119B00107594 /* AppDelegate.swift in Sources */,
 				0EDECF7525682116001A0F0B /* ShowDetailInteractor.swift in Sources */,
@@ -602,6 +609,7 @@
 				0EDECF5225681BC1001A0F0B /* ShowsListInteractorOutputProtocol.swift in Sources */,
 				0EDECF2025681787001A0F0B /* ShowDetailView.swift in Sources */,
 				0EDECF39256819DA001A0F0B /* ShowDetailWireframe.swift in Sources */,
+				0E0F3C452568963700BD677D /* UIViewController+Extension.swift in Sources */,
 				0E0F3C252568713100BD677D /* ShowsListLocalDataManager.swift in Sources */,
 				0EDECF97256827A2001A0F0B /* EndpointProtocol.swift in Sources */,
 				0EDECF6D2568210D001A0F0B /* ShowDetailWireframeProtocol.swift in Sources */,

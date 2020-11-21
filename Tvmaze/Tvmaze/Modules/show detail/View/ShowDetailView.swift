@@ -17,10 +17,11 @@ class ShowDetailView: UIViewController, ShowDetailViewProtocol {
     
     func populate(_ state: ShowDetailState) {
         switch state {
-        case .load:
-            break // TODO: load table
+        case .load(let viewModel):
+            title = viewModel.name
+            // TODO: load view with image, summary and rating
         case .error(let error):
-            print(error) // TODO: show error
+            showError(error)
         }
     }
 }

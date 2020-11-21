@@ -10,8 +10,8 @@
 "ShowsList.Title" = "TV Shows List";
 
 // Reusables
-"Alert.Button.Refresh" = "Refresh";
+"Alert.Button.Ok" = "OK";
 
 //API Error
-"APIError.UnknownException" = "An unknown error occurred. Try again.";
+"APIError.UnknownException" = "An unknown error occurred. Pull to refresh.";
 "APIError.Parsing" = "Invalid model";

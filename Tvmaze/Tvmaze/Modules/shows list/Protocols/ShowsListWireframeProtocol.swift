@@ -8,7 +8,7 @@
 import UIKit
 
 enum ShowsListPage {
-    case showDetail
+    case showDetail(ShowEntity)
 }
 
 protocol ShowsListWireframeProtocol {

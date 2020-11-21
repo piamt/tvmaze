@@ -8,8 +8,7 @@
 import Foundation
 
 enum ShowDetailIteractorResult {
-    case showDetailSucceed
-    case showDetailFailed(Error)
+    case showDetail(DetailViewModel)
 }
 
 protocol ShowDetailInteractorOutputProtocol: class {

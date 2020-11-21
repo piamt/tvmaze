@@ -31,8 +31,8 @@ final class ShowsListWireframe: ShowsListWireframeProtocol {
     
     func navigate(to page: ShowsListPage) {
         switch page {
-        case .showDetail:
-            let detailView = ShowDetailWireframe.createModule()
+        case .showDetail(let entity):
+            let detailView = ShowDetailWireframe.createModule(entity: entity)
             view?.navigationController?.pushViewController(detailView, animated: true)
         }
     }

@@ -11,12 +11,12 @@ final class ShowDetailWireframe: ShowDetailWireframeProtocol {
 
     var view: UIViewController?
     
-    static func createModule() -> UIViewController {
+    static func createModule(entity: ShowEntity) -> UIViewController {
         let viewController = ShowDetailView()
         
         let wireframe = ShowDetailWireframe()
         let presenter = ShowDetailPresenter()
-        let interactor = ShowDetailInteractor()
+        let interactor = ShowDetailInteractor(entity: entity)
         
         wireframe.view = viewController
         viewController.presenter = presenter

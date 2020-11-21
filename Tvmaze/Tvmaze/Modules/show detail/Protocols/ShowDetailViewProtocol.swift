@@ -8,7 +8,7 @@
 import Foundation
 
 enum ShowDetailState {
-    case load
+    case load(DetailViewModel)
     case error(String)
 }
 

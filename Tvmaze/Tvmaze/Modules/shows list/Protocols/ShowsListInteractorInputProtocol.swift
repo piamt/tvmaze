@@ -15,5 +15,6 @@ protocol ShowsListInteractorInputProtocol {
     var presenter: ShowsListInteractorOutputProtocol? { get set }
     var repository: ShowsListRepositoryProtocol? { get set }
     var currentPage: Int { get set }
+    func showEntityForIndex(_ index: Int) -> ShowEntity
     func `do`(_ job: ShowsListJob)
 }
