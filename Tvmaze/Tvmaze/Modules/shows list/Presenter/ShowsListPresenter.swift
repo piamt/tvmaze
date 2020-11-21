@@ -19,8 +19,7 @@ class ShowsListPresenter: ShowsListPresenterProtocol, ShowsListInteractorOutputP
         case .fetchData:
             interactor?.do(.requestTvShows)
         case .reload:
-            interactor?.currentPage = 0
-            interactor?.do(.requestTvShows)
+            interactor?.do(.reloadTvShows)
         case .detail(let index):
             guard let entity = interactor?.showEntityForIndex(index) else { return }
             wireframe?.navigate(to: .showDetail(entity))

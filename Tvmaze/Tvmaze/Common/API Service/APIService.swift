@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias APIServiceResultBlock = (Result<Data, ErrorModel>) -> Void
+typealias APIServiceResultBlock = (Result<Data?, ErrorModel>) -> Void
 
 protocol APIServiceProtocol: class {
     func makeAPIRequest(_ endpoint: EndpointProtocol, resultBlock: @escaping APIServiceResultBlock)
@@ -47,16 +47,16 @@ class APIServiceDefault: APIServiceProtocol {
               dataTask = nil
             }
             
-            if let httpResponse = response as? HTTPURLResponse, let data = data {
+            if let httpResponse = response as? HTTPURLResponse, let _ = data {
                 switch httpResponse.statusCode {
-                case 200 ... 299: // TODO: Check API Specifications
+                case 200 ... 299:
                     resultBlock(.success(data))
+                case 404:
+                    resultBlock(.success(nil))
                 default:
-                    // TODO: Check error and data and convert to ErrorModel
                     resultBlock(.failure(ErrorModel(APIError.General.unknownException)))
                 }
             } else {
-                // TODO: Check error and data and convert to ErrorModel
                 resultBlock(.failure(ErrorModel(APIError.General.unknownException)))
             }  
         }

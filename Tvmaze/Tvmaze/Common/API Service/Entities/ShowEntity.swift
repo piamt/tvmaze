@@ -17,8 +17,9 @@ struct ImageEntity: Codable {
 }
 
 struct ShowEntity: Codable {
+    var id: Int
     var name: String
     var image: ImageEntity?
     var rating: RatingEntity?
-    var summary: String
+    var summary: String?
 }

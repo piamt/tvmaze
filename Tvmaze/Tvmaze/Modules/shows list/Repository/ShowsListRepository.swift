@@ -21,6 +21,10 @@ class ShowsListRepository: ShowsListRepositoryProtocol {
         apiDataManager.tvShows(page: page) { result in 
             switch result {
             case .success(let data):
+                guard let data = data else {
+                    resultBlock(.success([]))
+                    return
+                }
                 guard let array = try? JSONDecoder().decode([ShowEntity].self, from: data) else {
                     resultBlock(.failure(ErrorModel(APIError.General.parsing)))
                     return

@@ -9,6 +9,10 @@
 //Shows list screen
 "ShowsList.Title" = "TV Shows List";
 
+// Detail screen
+"ShowDetail.Rating.Title" = "Rating:";
+"ShowDetail.Rating.NoRatingAvailable" = "No rating available for this show";
+
 // Reusables
 "Alert.Button.Ok" = "OK";
 

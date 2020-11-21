@@ -24,9 +24,9 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter?.perform(.fetchData)
         title = "ShowsList.Title".localized
         tableViewConfiguration()
+        presenter?.perform(.reload)
     }
     
     // MARK: ShowsListViewProtocol implementation
@@ -87,7 +87,7 @@ extension ShowsListView: UITableViewDelegate, UITableViewDataSource {
         setupCellUI(cell, show: shows[indexPath.row])
         
         // TODO: Improve pagination
-        if (indexPath.row == shows.count - 10) {
+        if (indexPath.row == shows.count - 20) {
             presenter?.perform(.fetchData)
         }
         

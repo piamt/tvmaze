@@ -11,7 +11,8 @@ class ShowsListInteractor: ShowsListInteractorInputProtocol {
     weak var presenter: ShowsListInteractorOutputProtocol?
     var repository: ShowsListRepositoryProtocol?
     
-    var currentPage: Int = 0
+    private var currentPage: Int = 0
+    private var availablePages: Bool = true
     private var showsArray: [ShowEntity] = []
     
     func showEntityForIndex(_ index: Int) -> ShowEntity {
@@ -20,19 +21,30 @@ class ShowsListInteractor: ShowsListInteractorInputProtocol {
     
     func `do`(_ job: ShowsListJob) {
         switch job {
+        case .reloadTvShows:
+            availablePages = true
+            currentPage = 0
+            requestTvShows()
         case .requestTvShows:
-            repository?.tvShows(page: currentPage + 1) { result in
-                switch result {
-                case .success(let array):
-                    self.currentPage += 1 
-                    self.showsArray.append(contentsOf: array)
-                    self.presenter?.handle(.tvShowsSucceed(self.showsArray.compactMap({ ShowViewModel(entity: $0) })))
-                case .failure(let error):
-                    self.presenter?.handle(.tvShowsFailed(error))
-                }
-            }
+            requestTvShows()
         }
     }
     
-    
+    private func requestTvShows() {
+        guard availablePages == true else { return }
+        repository?.tvShows(page: currentPage + 1) { result in
+            switch result {
+            case .success(let array):
+                guard array.count > 0 else {
+                    self.availablePages = false
+                    return
+                }
+                self.currentPage += 1
+                self.showsArray.append(contentsOf: array)
+                self.presenter?.handle(.tvShowsSucceed(self.showsArray.compactMap({ ShowViewModel(entity: $0) })))
+            case .failure(let error):
+                self.presenter?.handle(.tvShowsFailed(error))
+            }
+        }
+    }
 }
