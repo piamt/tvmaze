@@ -31,6 +31,8 @@
 		0E43FA982569BEF5002DCCAB /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FA972569BEF5002DCCAB /* UIScrollView+Extension.swift */; };
 		0E43FA9D2569C439002DCCAB /* ShowDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FA9C2569C439002DCCAB /* ShowDetailPresenterTests.swift */; };
 		0E43FAA22569C445002DCCAB /* ShowDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FAA12569C445002DCCAB /* ShowDetailInteractorTests.swift */; };
+		0E43FAB42569CB40002DCCAB /* ShowDetailWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FAB32569CB40002DCCAB /* ShowDetailWireframeTests.swift */; };
+		0E43FABD2569CCDB002DCCAB /* ShowsListWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43FABC2569CCDB002DCCAB /* ShowsListWireframeTests.swift */; };
 		0E4EF5E02568155E0005503C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E4EF5E22568155E0005503C /* Localizable.strings */; };
 		0E4EF5E9256815C90005503C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4EF5E8256815C90005503C /* String+Extension.swift */; };
 		0EB863342568119B00107594 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB863332568119B00107594 /* AppDelegate.swift */; };
@@ -111,6 +113,8 @@
 		0E43FA972569BEF5002DCCAB /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		0E43FA9C2569C439002DCCAB /* ShowDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailPresenterTests.swift; sourceTree = "<group>"; };
 		0E43FAA12569C445002DCCAB /* ShowDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailInteractorTests.swift; sourceTree = "<group>"; };
+		0E43FAB32569CB40002DCCAB /* ShowDetailWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailWireframeTests.swift; sourceTree = "<group>"; };
+		0E43FABC2569CCDB002DCCAB /* ShowsListWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsListWireframeTests.swift; sourceTree = "<group>"; };
 		0E4EF5E12568155E0005503C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E4EF5E8256815C90005503C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		0EB863302568119B00107594 /* Tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +239,7 @@
 		0E43FA4B256979A7002DCCAB /* shows list */ = {
 			isa = PBXGroup;
 			children = (
+				0E43FABB2569CCC8002DCCAB /* Wireframe */,
 				0E43FA4C256979A7002DCCAB /* Repository */,
 				0E43FA52256979A7002DCCAB /* Interactor */,
 				0E43FA4E256979A7002DCCAB /* Presenter */,
@@ -278,6 +283,7 @@
 		0E43FA54256979A7002DCCAB /* show detail */ = {
 			isa = PBXGroup;
 			children = (
+				0E43FAB22569CB30002DCCAB /* Wireframe */,
 				0E43FA8E2569BC3C002DCCAB /* Interactor */,
 				0E43FA8D2569BC20002DCCAB /* Presenter */,
 				0E43FA8C2569BC1B002DCCAB /* View */,
@@ -332,6 +338,22 @@
 				0E43FAA12569C445002DCCAB /* ShowDetailInteractorTests.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0E43FAB22569CB30002DCCAB /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FAB32569CB40002DCCAB /* ShowDetailWireframeTests.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		0E43FABB2569CCC8002DCCAB /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				0E43FABC2569CCDB002DCCAB /* ShowsListWireframeTests.swift */,
+			);
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 		0E4EF5D9256815370005503C /* Resources */ = {
@@ -920,12 +942,14 @@
 			files = (
 				0E43FA9D2569C439002DCCAB /* ShowDetailPresenterTests.swift in Sources */,
 				0E43FA56256979A7002DCCAB /* ShowsListRepositoryTests.swift in Sources */,
+				0E43FABD2569CCDB002DCCAB /* ShowsListWireframeTests.swift in Sources */,
 				0E43FA6B25697AD7002DCCAB /* JSONUtils.swift in Sources */,
 				0E43FA58256979A7002DCCAB /* ShowsListViewTests.swift in Sources */,
 				0E43FA57256979A7002DCCAB /* ShowsListPresenterTests.swift in Sources */,
 				0E43FA59256979A7002DCCAB /* ShowsListInteractorTests.swift in Sources */,
 				0E43FA902569BC64002DCCAB /* ShowDetailViewTests.swift in Sources */,
 				0E43FAA22569C445002DCCAB /* ShowDetailInteractorTests.swift in Sources */,
+				0E43FAB42569CB40002DCCAB /* ShowDetailWireframeTests.swift in Sources */,
 				0EB8634B2568119F00107594 /* TvmazeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
