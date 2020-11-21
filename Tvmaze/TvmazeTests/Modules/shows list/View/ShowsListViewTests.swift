@@ -9,22 +9,37 @@ import XCTest
 import FBSnapshotTestCase
 @testable import Tvmaze
 
+fileprivate class ShowsListPresenterMock: ShowsListPresenterProtocol {
+    var view: ShowsListViewProtocol?
+    var interactor: ShowsListInteractorInputProtocol?
+    var wireframe: ShowsListWireframeProtocol?
+    
+    func perform(_ action: ShowsListViewAction) {}
+}
+
 class ShowsListViewTests: FBSnapshotTestCase {
     
-    let view = ShowsListView()
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        recordMode = true
+    var view: ShowsListView!
+    fileprivate var presenter: ShowsListPresenterMock!
+    
+    override func setUp() {
+        super.setUp()
+        UIView.setAnimationsEnabled(false)
+        ViewDispatcher.shared.dispatcher = DispatcherMock()
+        view = ShowsListView()
+        presenter = ShowsListPresenterMock()
+        view.presenter = presenter
+        view.loadViewIfNeeded()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        super.tearDown()
+        UIView.setAnimationsEnabled(true)
+        ViewDispatcher.shared.dispatcher = DispatcherDefault()
     }
 
-    func testPopulateReload() throws {
-        view.loadView()
-        view.populate(.reload(showsArray, isLastPage: true))
+    func test_Screenshot_PopulateReload() throws {
+        view.populate(.reload(showsArray, isLastPage: false))
         FBSnapshotVerifyView(view.view)
     }
 }
@@ -38,5 +53,3 @@ private var showsArray: [ShowViewModel] {
         return []
     }
 }
-
-

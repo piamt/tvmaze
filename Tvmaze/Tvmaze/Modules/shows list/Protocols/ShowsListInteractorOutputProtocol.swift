@@ -8,7 +8,7 @@
 import Foundation
 
 enum ShowsListIteractorResult {
-    case tvShowsSucceed([ShowViewModel])
+    case tvShowsSucceeded([ShowViewModel])
     case tvShowsFailed(ErrorModel)
 }
 

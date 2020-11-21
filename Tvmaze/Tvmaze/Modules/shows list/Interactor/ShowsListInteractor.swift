@@ -47,7 +47,7 @@ class ShowsListInteractor: ShowsListInteractorInputProtocol {
                 }
                 self.currentPage += 1
                 self.showsArray.append(contentsOf: array)
-                self.presenter?.handle(.tvShowsSucceed(self.showsArray.compactMap({ ShowViewModel(entity: $0) })))
+                self.presenter?.handle(.tvShowsSucceeded(self.showsArray.compactMap({ ShowViewModel(entity: $0) })))
                 self.fetchInProgress = false
             case .failure(let error):
                 self.presenter?.handle(.tvShowsFailed(error))

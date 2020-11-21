@@ -6,27 +6,88 @@
 //
 
 import XCTest
+@testable import Tvmaze
 
-class ShowsListRepositoryTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class ShowsListAPIDataManagerMock: ShowsListAPIDataManagerProtocol {
+    
+    enum ShowsListAPIDataManagerCall {
+        case none
+        case tvShows
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    enum ShowsListAPIDataManagerResult {
+        case none
+        case success
+        case error
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    var call: ShowsListAPIDataManagerCall = .none
+    var result: ShowsListAPIDataManagerResult = .none
+    
+    func tvShows(page: Int, resultBlock: @escaping APIServiceResultBlock) {
+        call = .tvShows
+        switch result {
+        case .success:
+            resultBlock(.success(try! JSONUtils.readJSON(filename: "ShowEntity")))
+        case .error:
+            resultBlock(.failure(ErrorModel(APIError.General.parsing)))
+        default:
+            break
         }
     }
+}
 
+class ShowsListLocalDataManagerMock: ShowsListLocalDataManagerProtocol {}
+
+class ShowsListRepositoryTests: XCTestCase {
+    
+    var repository: ShowsListRepository!
+    fileprivate var apiDataManager: ShowsListAPIDataManagerMock!
+    fileprivate var localDataManager: ShowsListLocalDataManagerMock!
+    
+    override func setUp() {
+        super.setUp()
+        apiDataManager = ShowsListAPIDataManagerMock()
+        localDataManager = ShowsListLocalDataManagerMock()
+        repository = ShowsListRepository(apiDataManager: apiDataManager, localDataManager: localDataManager)
+    }
+
+    func test_requestTVShows_Call() throws {
+        repository.tvShows(page: 1) { _ in }
+        XCTAssertEqual(apiDataManager.call, .tvShows)
+    }
+
+    func test_requestTVShows_Failure() throws {
+        apiDataManager.result = .error
+        repository.tvShows(page: 1) { (result) in
+            switch result {
+            case .success:
+                XCTFail()
+            case .failure(let error):
+                XCTAssertEqual(error, ErrorModel(APIError.General.parsing))
+            }
+        }
+    }
+    
+    func test_requestTVShows_Success() throws {
+        apiDataManager.result = .success
+        repository.tvShows(page: 1) { (result) in
+            switch result {
+            case .success(let array):
+                XCTAssertEqual(array.first!.id, showsArray.first!.id)
+            case .failure:
+                XCTFail()
+            }
+        }
+    }
+}
+
+private var showsArray: [ShowEntity] {
+    if let data = try? JSONUtils.readJSON(filename: "ShowEntity"),
+       let array = try? JSONDecoder().decode([ShowEntity].self, from: data) {
+        return array
+    } else {
+        XCTFail()
+        return []
+    }
 }

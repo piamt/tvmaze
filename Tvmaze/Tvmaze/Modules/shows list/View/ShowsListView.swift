@@ -34,7 +34,7 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
         case .reload(let shows, let isLastPage):
             self.isLastPage = isLastPage
             self.shows = shows
-            DispatchQueue.main.async {
+            ViewDispatcher.shared.execute {
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
