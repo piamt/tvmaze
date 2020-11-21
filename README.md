@@ -18,3 +18,6 @@ I used cocoapods for libraries. Just 1 library was added to the main project and
 1. SDWebImage to upload images
 2. iOSSnapshotTestCase for screenshot tests
 
+## Test coverage
+84,7% of test coverage
+
