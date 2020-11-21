@@ -14,7 +14,7 @@ class ShowDetailView: UIViewController, ShowDetailViewProtocol {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
-    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

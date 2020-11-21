@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="imageView" destination="AFF-7y-aVU" id="Mk3-WO-WyR"/>
                 <outlet property="ratingLabel" destination="7CF-Nd-qMz" id="7ZD-Gk-3YV"/>
+                <outlet property="scrollView" destination="H2z-UC-z5r" id="cFJ-KN-av1"/>
                 <outlet property="summaryLabel" destination="k0M-Oi-iig" id="MOc-32-4h3"/>
                 <outlet property="view" destination="iN0-l3-epB" id="5j5-6b-1Tz"/>
             </connections>
