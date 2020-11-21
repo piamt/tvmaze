@@ -30,9 +30,13 @@ class ShowsListPresenter: ShowsListPresenterProtocol, ShowsListInteractorOutputP
     func handle(_ result: ShowsListIteractorResult) {
         switch result {
         case .tvShowsSucceed(let arrayViewModel):
-            view?.populate(.reload(arrayViewModel))
+            DispatchQueue.main.async {
+                self.view?.populate(.reload(arrayViewModel, isLastPage: self.interactor?.isLastPage ?? true))
+            }
         case .tvShowsFailed(let error):
-            view?.populate(.error(error.value.string.localized))
+            DispatchQueue.main.async {
+                self.view?.populate(.error(error.value.string.localized))
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ enum ShowsListJob {
 protocol ShowsListInteractorInputProtocol {
     var presenter: ShowsListInteractorOutputProtocol? { get set }
     var repository: ShowsListRepositoryProtocol? { get set }
+    var isLastPage: Bool { get }
     func showEntityForIndex(_ index: Int) -> ShowEntity
     func `do`(_ job: ShowsListJob)
 }

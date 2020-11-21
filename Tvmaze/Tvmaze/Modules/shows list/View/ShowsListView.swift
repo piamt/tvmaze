@@ -11,6 +11,7 @@ import SDWebImage
 final class ShowsListView: UIViewController, ShowsListViewProtocol {
     
     @IBOutlet weak var tableView: UITableView!
+    var isLastPage: Bool = true
     
     var presenter: ShowsListPresenterProtocol?
     private var shows: [ShowViewModel] = []
@@ -23,7 +24,7 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         title = "ShowsList.Title".localized
         tableViewConfiguration()
         presenter?.perform(.reload)
@@ -32,7 +33,8 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
     // MARK: ShowsListViewProtocol implementation
     func populate(_ state: ShowsListState) {
         switch state {
-        case .reload(let shows):
+        case .reload(let shows, let isLastPage):
+            self.isLastPage = isLastPage
             self.shows = shows
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -50,51 +52,49 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
     private func tableViewConfiguration() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.prefetchDataSource = self
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: "ShowTableViewCell", bundle: nil), forCellReuseIdentifier: "ShowCell")
         tableView.addSubview(refreshControl)
-    }
-    
-    private func setupCellUI(_ cell: UITableViewCell, show: ShowViewModel) {
-        cell.textLabel?.text = show.name
-        if let imageUrl = show.imageUrl {
-            cell.imageView?.sd_setImage(with: URL(string: imageUrl),
-                                                placeholderImage: UIImage(named: "placeholder"),
-                                                options: [.retryFailed]) { (_, _, _, _) in
-                cell.imageView?.contentMode = .scaleAspectFill
-                cell.setNeedsLayout()
-            }
-        } else {
-            cell.imageView?.image = UIImage(named: "placeholder")
-            cell.imageView?.contentMode = .scaleAspectFill
-        }
     }
 }
 
-extension ShowsListView: UITableViewDelegate, UITableViewDataSource {
+extension ShowsListView: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shows.count
+        return shows.count > 0 ? (isLastPage ? shows.count : shows.count + 10) : 0 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        // TODO: If custom cell uncomment
-        //if cell == nil {
-        //    cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
-        //}
-        
-        setupCellUI(cell, show: shows[indexPath.row])
-        
-        // TODO: Improve pagination
-        if (indexPath.row == shows.count - 20) {
-            presenter?.perform(.fetchData)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShowCell", for: indexPath) as? ShowTableViewCell else {
+            return UITableViewCell()
         }
         
-        return cell // TODO: if custom cell add: ?? UITableViewCell()
+        if isLoadingCell(for: indexPath) {
+            cell.setup(with: .none)
+        } else {
+            cell.setup(with: shows[indexPath.row])
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.perform(.detail(index: indexPath.row))
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLoadingCell) {
+            presenter?.perform(.fetchData)
+        }
+    }
+    
+    private func isLoadingCell(for indexPath: IndexPath) -> Bool {
+        return indexPath.row >= shows.count
     }
 }

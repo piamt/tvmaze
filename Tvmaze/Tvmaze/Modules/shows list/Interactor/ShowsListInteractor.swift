@@ -13,7 +13,12 @@ class ShowsListInteractor: ShowsListInteractorInputProtocol {
     
     private var currentPage: Int = 0
     private var availablePages: Bool = true
+    private var fetchInProgress: Bool = false
     private var showsArray: [ShowEntity] = []
+    
+    var isLastPage: Bool {
+        return !availablePages
+    }
     
     func showEntityForIndex(_ index: Int) -> ShowEntity {
         showsArray[index]
@@ -31,7 +36,8 @@ class ShowsListInteractor: ShowsListInteractorInputProtocol {
     }
     
     private func requestTvShows() {
-        guard availablePages == true else { return }
+        guard availablePages == true, fetchInProgress == false else { return }
+        fetchInProgress = true
         repository?.tvShows(page: currentPage + 1) { result in
             switch result {
             case .success(let array):
@@ -42,8 +48,10 @@ class ShowsListInteractor: ShowsListInteractorInputProtocol {
                 self.currentPage += 1
                 self.showsArray.append(contentsOf: array)
                 self.presenter?.handle(.tvShowsSucceed(self.showsArray.compactMap({ ShowViewModel(entity: $0) })))
+                self.fetchInProgress = false
             case .failure(let error):
                 self.presenter?.handle(.tvShowsFailed(error))
+                self.fetchInProgress = false
             }
         }
     }

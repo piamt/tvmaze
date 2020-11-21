@@ -25,7 +25,9 @@ class ShowDetailPresenter: ShowDetailPresenterProtocol, ShowDetailInteractorOutp
     func handle(_ result: ShowDetailIteractorResult) {
         switch result {
         case .showDetail(let viewModel):
-            view?.populate(.load(viewModel)) // TODO: populate with viewModel
+            DispatchQueue.main.async {
+                self.view?.populate(.load(viewModel))
+            }
         }
     }
 }
