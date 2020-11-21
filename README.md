@@ -15,7 +15,7 @@ To Run the project, first run *pod instal* in terminal.
 
 ## Libraries
 I used cocoapods for dependencies. Just 1 library was added to the main project and 1 for testing purposes.
-1. SDWebImage to upload images
+1. SDWebImage to download images
 2. iOSSnapshotTestCase for screenshot tests
 
 ## Test coverage
