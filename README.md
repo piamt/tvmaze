@@ -14,7 +14,7 @@ To Run the project, first run *pod instal* in terminal.
 4. Regarding pagination: we have a simplified version of an infinite scroll, with the handicap that we do not have the total number of elements in advance.
 
 ## Libraries
-I used cocoapods for libraries. Just 1 library was added to the main project and 1 for testing purposes.
+I used cocoapods for dependencies. Just 1 library was added to the main project and 1 for testing purposes.
 1. SDWebImage to upload images
 2. iOSSnapshotTestCase for screenshot tests
 
