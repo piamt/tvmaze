@@ -24,7 +24,7 @@ class ShowsListInteractor: ShowsListInteractorInputProtocol {
             repository?.tvShows(page: currentPage + 1) { result in
                 switch result {
                 case .success(let array):
-                    self.currentPage += 1 // TODO: Pagination
+                    self.currentPage += 1 
                     self.showsArray.append(contentsOf: array)
                     self.presenter?.handle(.tvShowsSucceed(self.showsArray.compactMap({ ShowViewModel(entity: $0) })))
                 case .failure(let error):

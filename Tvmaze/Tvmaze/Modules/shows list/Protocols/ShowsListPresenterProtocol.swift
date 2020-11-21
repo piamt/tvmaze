@@ -8,7 +8,7 @@
 import Foundation
 
 enum ShowsListViewAction {
-    case load
+    case fetchData
     case reload
     case detail(index: Int)
 }

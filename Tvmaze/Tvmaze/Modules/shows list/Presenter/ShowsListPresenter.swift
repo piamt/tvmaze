@@ -16,7 +16,7 @@ class ShowsListPresenter: ShowsListPresenterProtocol, ShowsListInteractorOutputP
     // MARK: Implement ShowsListPresenterProtocol
     func perform(_ action: ShowsListViewAction) {
         switch action {
-        case .load:
+        case .fetchData:
             interactor?.do(.requestTvShows)
         case .reload:
             interactor?.currentPage = 0

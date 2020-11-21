@@ -14,7 +14,7 @@ struct ShowViewModel {
         entity.name
     }
     
-    var imageUrl: String {
-        entity.image.medium
+    var imageUrl: String? {
+        entity.image?.medium
     }
 }

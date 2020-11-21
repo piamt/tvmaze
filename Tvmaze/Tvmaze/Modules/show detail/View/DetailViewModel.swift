@@ -14,12 +14,12 @@ struct DetailViewModel {
         entity.name
     }
     
-    var imageUrl: String {
-        entity.image.original ?? entity.image.medium
+    var imageUrl: String? {
+        entity.image?.original ?? entity.image?.medium
     }
     
     var rating: Double? {
-        entity.rating.average
+        entity.rating?.average
     }
     
     var summary: String {

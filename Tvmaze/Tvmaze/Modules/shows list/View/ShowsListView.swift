@@ -23,7 +23,7 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter?.perform(.load)
+        presenter?.perform(.fetchData)
         title = "ShowsList.Title".localized
         tableViewConfiguration()
     }
@@ -49,13 +49,12 @@ final class ShowsListView: UIViewController, ShowsListViewProtocol {
     private func tableViewConfiguration() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.prefetchDataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.addSubview(refreshControl)
     }
 }
 
-extension ShowsListView: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+extension ShowsListView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shows.count
@@ -73,14 +72,14 @@ extension ShowsListView: UITableViewDelegate, UITableViewDataSource, UITableView
         cell.textLabel?.text = show.name
         // TODO: Use SDWebImage to display show.image.medium
         
+        if (indexPath.row == shows.count - 10) { // TODO: Improve pagination
+            presenter?.perform(.fetchData)
+        }
+        
         return cell // TODO: if custom cell add: ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.perform(.detail(index: indexPath.row))
-    }
-    
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        <#code#>
     }
 }

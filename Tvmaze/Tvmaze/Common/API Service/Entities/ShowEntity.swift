@@ -13,12 +13,12 @@ struct RatingEntity: Codable {
 
 struct ImageEntity: Codable {
     var original: String?
-    var medium: String
+    var medium: String?
 }
 
 struct ShowEntity: Codable {
     var name: String
-    var image: ImageEntity
-    var rating: RatingEntity
+    var image: ImageEntity?
+    var rating: RatingEntity?
     var summary: String
 }
