@@ -19,7 +19,7 @@ I used cocoapods for dependencies. Just 1 library was added to the main project 
 2. iOSSnapshotTestCase for screenshot tests
 
 ## Nice to have
-I could be interesting to add a local data manager to store the fetched data and display it to the user while he/she is waiting for the API response. I added a local data manager in ShowsList module with such purpose. To persist this data locally, we could use a framework Core Data or Realm.
+It could be interesting to add a local data manager to store the fetched data and display it to the user while he/she is waiting for the API response. I added a local data manager in ShowsList module with such purpose. To persist this data locally, we could use a framework Core Data or Realm.
 
 ## Test coverage
 84,7% of test coverage
