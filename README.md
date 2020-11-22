@@ -22,6 +22,6 @@ I used cocoapods for dependencies. Just 1 library was added to the main project 
 It could be interesting to add a local data manager to store the fetched data and display it to the user while he/she is waiting for the API response. I added a local data manager in ShowsList module with such purpose. To persist this data locally, we could use a framework Core Data or Realm.
 
 ## Test coverage
-84,7% of test coverage
+84,7% of test coverage.
 You can find unit tests for each component of the VIPER module and screenshot tests for the views. (Use iPhone 8 to check snapshots.)
 Also for simplification, there is just one mocked array of shows in a json file and some entities were copy pasted in different test files.
