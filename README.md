@@ -9,7 +9,7 @@ To Run the project, first run *pod install* in terminal.
 
 ## Implementation details
 1. For simplification, the UI was implemented only taking into account iPhone devices.
-2. The architecture used for the 2 modules was VIPER. Taking advantatge of the benefits of clean architecture, I tried to decouple the business logic layer as much as possible. Also, I used independent xib files for each module or subview. I used a singleton for API services, factory pattern to create each module and abstraction with protocols to define the contracts for each component in the VIPER module. Also, you can find a couple of extensions and utils, like *ViewDispatcher*, which is very useful for testing views avoiding threading issues.
+2. The architecture used for the 2 modules was clean, using VIPER pattern. Taking advantatge of the benefits of clean architecture, I tried to decouple the business logic layer as much as possible. Also, I used independent xib files for each module or subview. I used a singleton for API services, factory pattern to create each module and abstraction with protocols to define the contracts for each component in the VIPER module. Also, you can find a couple of extensions and utils, like *ViewDispatcher*, which is very useful for testing views avoiding threading issues.
 3. For networking, taking into account the scope of the project, a simple implementation with NSURLSession + Decodable was enough.
 4. Regarding pagination: we have a simplified version of an infinite scroll, with the handicap that we do not have the total number of elements in advance.
 
